@@ -5,6 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="The Flower Work - Fresh Blooms, Heartfelt Moments">
+    <meta property="og:type" content="website">
     <title>The Flower Work - Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +16,7 @@
 <body class="f-quicksand">
     <header role="banner">
         <a href="index.html">
-            <img src="images\logos\logo_pink.png" alt="The Flower Work Logo">
+            <img src="images/logos/logo_pink.png" alt="The Flower Work Logo">
         </a>
         <nav role="navigation">
             <a href="index.html">Home</a>
@@ -25,25 +27,138 @@
         <form class="search-bar" action="/search.html" method="get">
             <input type="search" name="search" class="search-field f-quicksand f-bold c-text" placeholder="Search">
             <button type="submit" class="search-button">
-                <img src="images\icons\search.png" alt="Search Icon" class="search-icon">
+                <img src="images/icons/search.png" alt="Search Icon" class="search-icon">
             </button>
         </form>
-        <div class="login-container">
+        <div class="login-container" id="logged-out">
             <a href="register.html" id="signup-btn">Sign Up</a>
             <a href="login.html" id="login-btn">Login</a>
+        </div>
+        <div class="signed-in-container" id="logged-in">
+            <a href="cart.html">
+                <img src="images/icons/shopping-cart.png" alt="Cart Icon">
+                <img src="images/icons/shopping-cart_pink.png" alt="Cart Icon" class="hover-icon">
+            </a>
+            <a href="profile.html">
+                <img src="images/icons/avatar.png" alt="Profile Icon">
+                <img src="images/icons/avatar_pink.png" alt="Profile Icon" class="hover-icon">
+            </a>
         </div>
     </header>
     <section class="hero f-quicksand">
         <div class="hero-content">
             <h1 class="f-caveat f-bold">Fresh Blooms,<span>Heartfelt Moments</span></h1>
-            <h3>Budget-friendly aesthetic bouquets for every occasion</h3>
+            <h3 class="f-medium">Budget-friendly aesthetic bouquets for every occasion</h3>
             <div class="hero-buttons">
                 <button class="f-quicksand f-bold" id="get-started-btn">Get Started</button>
                 <button class="f-quicksand f-semibold" id="browse-btn">Browse Our Collection</button>
             </div>
         </div>
-        <img class="hero-img" src="images\hero.png" alt="Hero Image">
+        <img class="hero-img" src="images/hero.png" alt="Hero Image">
     </section>
-    <img src="images\pink_wave.svg" alt="Wave">
+    <img src="images/pink_wave.svg" alt="Wave">
+    <section class="benefits f-quicksand">
+        <h2 class="f-bold">Why Choose Flowerwork?</h2>
+        <div class="bf-card-container">
+            <div class="bf-card">
+                <img src="images/icons/flower.png" alt="Flower Icon">
+                <h3 class="f-bold">Fresh Flowers</h3>
+                <p class="f-medium">Sourced weekly from trusted suppliers for guaranteed freshness</p>
+            </div>
+            <div class="bf-card">
+                <img src="images/icons/price-tag.png" alt="Price Tag Icon">
+                <h3 class="f-bold">Affordable Prices</h3>
+                <p class="f-medium">Budget-friendly options perfect for students and gift-givers</p>
+            </div>
+            <div class="bf-card">
+                <img src="images/icons/truck.png" alt="Truck Icon">
+                <h3 class="f-bold">Same-Day Delivery</h3>
+                <p class="f-medium">Quick delivery across Metro Manila & Quezon City</p>
+            </div>
+            <div class="bf-card">
+                <img src="images/icons/star.png" alt="Star Icon">
+                <h3 class="f-bold">Quality Guarantee</h3>
+                <p class="f-medium">Every bouquet is crafted with care and attention to detail</p>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials f-quicksand">
+        <h2 class="f-bold">What Our Customers Say</h2>
+        <h3 class="f-regular">Real stories from happy customers</h3>
+        <div class="ts-card-container">
+            <div class="ts-card">
+                <img src="images/quote.png" alt="Quote Icon">
+                <p class="f-regular">Absolutely beautiful! My girlfriend loved the pastel roses. The arrangement was even better than the photos. Will definitely order again!</p>
+                <div class="ts-card-details">
+                    <img src="images/testimonials/ts1.jpg" alt="Customer 1 Photo">
+                    <h3 class="f-bold">Boyfriend<span class="f-regular">Purchased: Anniversary Bouquet</span></h3>
+                </div>
+            </div>
+            <div class="ts-card">
+                <img src="images/quote.png" alt="Quote Icon">
+                <p class="f-regular">Perfect for my budget as a student! The flowers were fresh and lasted a whole week. Customer service was super responsive too.</p>
+                <div class="ts-card-details">
+                    <img src="images/testimonials/ts2.jpg" alt="Customer 2 Photo">
+                    <h3 class="f-bold">Student<span class="f-regular">Purchased: Birthday Gift</span></h3>
+                </div>
+            </div>
+            <div class="ts-card">
+                <img src="images/quote.png" alt="Quote Icon">
+                <p class="f-regular">Same-day delivery saved me! I ordered in the morning and it arrived by afternoon. My mom was so happy. Thank you, Flowerwork!</p>
+                <div class="ts-card-details">
+                    <img src="images/testimonials/ts3.jpg" alt="Customer 3 Photo">
+                    <h3 class="f-bold">Daughter<span class="f-regular">Purchased: Mother's Day</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <img src="images/white_wave.svg" alt="Wave">
+    <section class="cta f-quicksand">
+        <h2 class="f-bold">Ready to Brighten Someone's Day?</h2>
+        <h3 class="f-medium">Order your perfect bouquet today and let us help you create beautiful moments.</h3>
+        <button class="f-quicksand f-bold">Get Started Now</button>
+    </section>
+    <footer class="f-quicksand" role="contentinfo">
+        <div class="main-footer">
+            <img src="images/logos/logo_white.png" alt="Flowerwork Logo">
+            <div class="footer-links f-semibold">
+                <h3 class="f-bold">Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="bouquets.html">Our Bouquets</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-contact-info f-semibold">
+                <h3 class="f-bold">Visit Us</h3>
+                <h4>Monday - Saturday</h4>
+                <h4>9:00 AM - 6:00 PM</h4>
+                <h4>Sunday: By appointment</h4>
+            </div>
+            <div class="footer-socials">
+                <h3 class="f-bold">Follow Us!</h3>
+                <div class="footer-socials-icons">
+                    <a href="mailto:theflowerworkmnlph@gmail.com">
+                        <img src="images/icons/email.png" alt="Email Icon">
+                        <img src="images/icons/email_pink.png" alt="Email Icon" class="hover-icon">
+                    </a>
+                    <a href="https://m.me/itsraia">
+                        <img src="images/icons/messenger.png" alt="Messenger Icon">
+                        <img src="images/icons/messenger_pink.png" alt="Messenger Icon" class="hover-icon">
+                    </a>
+                    <a href="https://www.facebook.com/itsraia">
+                        <img src="images/icons/facebook.png" alt="Facebook Icon">
+                        <img src="images/icons/facebook_pink.png" alt="Facebook Icon" class="hover-icon">
+                    </a>
+                    <a href="https://www.instagram.com/theflowerwork/">
+                        <img src="images/icons/instagram.png" alt="Instagram Icon">
+                        <img src="images/icons/instagram_pink.png" alt="Instagram Icon" class="hover-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <h4 class="f-semibold">© 2025 Flowerwork. All rights reserved. | Managed by Iya</h4>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>
