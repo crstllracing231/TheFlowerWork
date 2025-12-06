@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
 });
 
 function checkLoginStatus() {
-    const isLoggedIn = true;
+    const isLoggedIn = false;
     return isLoggedIn;
 }
 
