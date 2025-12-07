@@ -46,6 +46,7 @@
     --text-5xl: 3rem;      /* 48px */
     --text-6xl: 3.75rem;   /* 60px */
     --text-7xl: 4.5rem;    /* 72px */
+    --text-8xl: 5.25rem;   /* 84px */
     
     /* BORDERS */
     --radius-sm: 0.125rem;   /* 2px */
@@ -439,7 +440,7 @@ header nav a:focus {
 
 .bf-card > p {
     font-size: var(--text-xl);
-    opacity: 0.7;
+    opacity: 0.8;
     line-height: 1.6;
     max-width: 280px;
 }
@@ -1141,11 +1142,11 @@ body.bq-pg {
 }
 
 .main-heading h1 {
-    font-size: var(--text-7xl);
+    font-size: var(--text-8xl);
 }
 
 .main-heading h4 {
-    font-size: var(--text-2xl);
+    font-size: var(--text-3xl);
     opacity: 0.8;
 }
 
@@ -1211,6 +1212,7 @@ body.bq-pg {
 
 .upsell-card > h4 {
     font-size: var(--text-xl);
+    opacity: 0.8;
 }
 
 .bq-container-heading {
@@ -1233,7 +1235,8 @@ body.bq-pg {
 
 .bq-heading h4 {
     font-size: var(--text-2xl);
-    text-align: center
+    text-align: center;
+    margin-top: var(--space-4);
 }
 
 .sort-dropdown-container {
@@ -1406,7 +1409,11 @@ body.bq-pg {
     }
 
     .main-heading h1 {
-        font-size: var(--text-6xl);
+        font-size: var(--text-7xl);
+    }
+
+    .main-heading h4 {
+        font-size: var(--text-2xl);
     }
 
     .upsell > h2 {
@@ -1458,11 +1465,11 @@ body.bq-pg {
     }
 
     .main-heading h1 {
-        font-size: var(--text-4xl);
+        font-size: var(--text-6xl);
     }
 
     .main-heading h4 {
-        font-size: var(--text-lg);
+        font-size: var(--text-xl);
         padding: 0 var(--space-4);
     }
 
@@ -1510,5 +1517,255 @@ body.bq-pg {
     .lason-btn {
         padding: var(--space-2);
         font-size: var(--text-base);
+    }
+}
+
+/* ABOUT PAGE */
+body.abt-pg {
+    background-color: var(--white);
+    color: var(--text);
+    padding-top: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.abt-story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-20);
+    width: 70%;
+    margin: 0 auto;
+}
+
+.abt-story > img {
+    width: 30rem;
+    border-radius: var(--radius-2xl);
+}
+
+.abt-para-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.abt-para-container > h2 {
+    font-size: var(--text-3xl);
+}
+
+.abt-para > p {
+    font-size: var(--text-xl);
+    margin: var(--space-4) 0;
+}
+
+.maker-story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-20);
+    width: 70%;
+    margin: var(--space-24) auto 0;
+}
+
+.maker-para-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.maker-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    text-align: center;
+    width: 20rem;
+}
+
+.maker-img-container img {
+    border: 3px solid var(--accent);
+    border-radius: var(--radius-full);
+    width: 100%;
+}
+
+.maker-name-container > h2 {
+    font-size: var(--text-5xl);
+}
+
+.maker-name-container > h3 {
+    font-size: var(--text-xl);
+}
+
+.mission-statement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8rem auto;
+    max-width: 50%;
+}
+
+.mission-statement > img {
+    width: 5rem;
+}
+
+.mission-statement > p {
+    font-size: var(--text-4xl);
+    margin: var(--space-8) 0;
+    text-align: center;
+    color: var(--secondary);
+}
+
+.mission-statement > h2 {
+    font-size: var(--text-5xl);
+    text-align: center;
+}
+
+.core-values {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--space-24) auto;
+    gap: var(--space-8);
+}
+
+.core-values > h2 {
+    font-size: var(--text-5xl);
+    text-align: center;
+}
+
+.cv-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-12);
+    width: 100%;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cv-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-8) var(--space-6);
+    border: 3px solid var(--accent);
+    border-radius: var(--radius-2xl);
+    background-color: var(--white);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.cv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cv-card > img {
+    width: 100px;
+}
+
+.cv-card > h3 {
+    font-size: var(--text-3xl);
+    margin: var(--space-4) 0 var(--space-2) 0;
+}
+
+.cv-card > p {
+    font-size: var(--text-xl);
+    opacity: 0.8;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .abt-story,
+    .maker-story {
+        width: 90%;
+        gap: var(--space-12);
+    }
+
+    .abt-story > img {
+        width: 24rem;
+    }
+
+    .mission-statement {
+        max-width: 80%;
+    }
+
+    .mission-statement > p {
+        font-size: var(--text-3xl);
+    }
+
+    .cv-container {
+        padding: 0 var(--space-8);
+    }
+}
+
+@media (max-width: 768px) {
+    .abt-story {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-8);
+        margin-top: var(--space-16);
+    }
+
+    .abt-story > img {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .abt-para-container {
+        align-items: center;
+    }
+
+    .maker-story {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: var(--space-8);
+        margin-top: var(--space-16);
+    }
+
+    .maker-para-container {
+        width: 100%;
+    }
+
+    .maker-img-container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .mission-statement {
+        max-width: 90%;
+        margin: var(--space-16) auto;
+    }
+
+    .mission-statement > p {
+        font-size: var(--text-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .abt-para-container > h2,
+    .maker-name-container > h2,
+    .core-values > h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .abt-para-container > p,
+    .maker-para-container > p,
+    .cv-card > p {
+        font-size: var(--text-base);
+    }
+
+    .cv-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        padding: 0 var(--space-4);
+    }
+
+    .cv-card {
+        padding: var(--space-6) var(--space-4);
+    }
+
+    .mission-statement > p {
+        font-size: var(--text-xl);
     }
 }
