@@ -5,8 +5,7 @@ window.addEventListener('scroll', () => {
 });
 
 function checkLoginStatus() {
-    const isLoggedIn = false;
-    return isLoggedIn;
+    return localStorage.getItem('isLoggedIn') === 'true';
 }
 
 function updateHeader() {
@@ -23,4 +22,21 @@ function updateHeader() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', updateHeader);
+document.addEventListener('DOMContentLoaded', () => {
+    updateHeader();
+
+    const logoutBtn = document.getElementById('logout');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const confirmLogout = confirm('Are you sure you want to log out?');
+
+            if (confirmLogout) {
+                localStorage.setItem('isLoggedIn', 'false');
+                alert('You have been logged out successfully.');
+                window.location.reload();
+            }
+        });
+    }
+})
