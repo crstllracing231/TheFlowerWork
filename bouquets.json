@@ -98,8 +98,8 @@
   {
     "id": 17,
     "name": "Meadow Tale",
-    "price": 3150.00,
-    "imagePath": "images/bouquets/Meadow Tale - 3150.jpg"
+    "price": 1650.00,
+    "imagePath": "images/bouquets/Meadow Tale - 1650.jpg"
   },
   {
     "id": 18,
@@ -171,7 +171,7 @@
     "id": 29,
     "name": "Sleeping Beauty's Garden",
     "price": 4000.00,
-    "imagePath": "images/bouquets/Sleeping Beauty's Garden - 4000.jpg"
+    "imagePath": "images/bouquets/Sleeping Beauty_s Garden - 4000.jpg"
   },
   {
     "id": 30,

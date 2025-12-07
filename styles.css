@@ -12,6 +12,7 @@
     --secondary: #e6678c;
     --secondary-dark: #e14a76;
     --accent: #a3c4bc;
+    --accent-light: #e3edeb;
     --text: #2c3e50;
     --white: #ffffff;
     --error: #c50040;
@@ -110,7 +111,7 @@ img {
     height: auto;
 }
 
-/* HEADER */
+/* HOME PAGE - HEADER */
 header {
     position: fixed;
     top: 0;
@@ -125,7 +126,7 @@ header {
 }
 
 header.scrolled {
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
 }
 
 header img {
@@ -1113,5 +1114,381 @@ body.auth-pg {
     .auth-btn, .google-btn {
         font-size: var(--text-base);
         padding: var(--space-3);
+    }
+}
+
+/* BOUQUETS PAGE */
+body.bq-pg {
+    background-color: var(--white);
+    color: var(--text);
+    padding-top: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 15rem;
+    text-align: center;
+    margin-top: 8rem;
+    margin-bottom: -5rem;
+    background: linear-gradient(180deg, var(--white) 0%, var(--primary) 100%);
+    position: relative;
+    z-index: 10;
+}
+
+.main-heading h1 {
+    font-size: var(--text-7xl);
+}
+
+.main-heading h4 {
+    font-size: var(--text-2xl);
+    opacity: 0.8;
+}
+
+.upsell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upsell > h2 {
+    font-size: var(--text-5xl);
+    text-align: center;
+}
+
+.upsell > h4 {
+    font-size: var(--text-2xl);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-12);
+    text-align: center;
+}
+
+.upsell-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-12);
+    width: 100%;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upsell-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-8) 0;
+    border: 3px solid var(--accent);
+    border-radius: var(--radius-2xl);
+    background-color: var(--white);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.upsell-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.2);
+}
+
+.upsell-card > img {
+    width: 100px;
+}
+
+.upsell-card > h3:first-of-type {
+    font-size: var(--text-3xl);
+    margin-top: var(--space-6);
+    text-align: center;
+}
+
+.upsell-card > h3:last-of-type {
+    font-size: var(--text-3xl);
+    margin-top: var(--space-1);
+    margin-bottom: var(--space-4);
+}
+
+.upsell-card > h4 {
+    font-size: var(--text-xl);
+}
+
+.bq-container-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-18);
+    padding: 0 var(--space-8);
+}
+
+.empty {
+    width: 20rem;
+    visibility: hidden;
+}
+
+.bq-heading h2 {
+    font-size: var(--text-5xl);
+    text-align: center;
+}
+
+.bq-heading h4 {
+    font-size: var(--text-2xl);
+    text-align: center
+}
+
+.sort-dropdown-container {
+    position: relative;
+    width: 20rem;
+    font-size: var(--text-xl);
+    align-self: flex-end;
+}
+
+.sort-display {
+    width: 100%;
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--white);
+    border: 3px solid var(--accent);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sort-arrow {
+    width: var(--space-3);
+    height: var(--space-3);
+    transition: transform var(--transition-base);
+}
+
+.sort-dropdown-container.open .sort-arrow {
+    transform: rotate(180deg);
+}
+
+.sort-dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: var(--space-1);
+    background-color: var(--white);
+    border: 3px solid var(--accent);
+    border-radius: var(--radius-lg);
+    list-style: none;
+    display: none;
+    z-index: 10;
+    box-shadow: var(--shadow-lg);
+}
+
+.sort-dropdown-list.show {
+    display: block;
+}
+
+.sort-dropdown-list > li {
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.sort-dropdown-list > li:hover {
+    background-color: var(--accent-light);
+    color: var(--text);
+    border-radius: var(--radius-md);
+}
+
+.sort-dropdown-list > li.active-sort {
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+}
+
+.sort-dropdown-list > hr {
+    background-color: var(--accent);
+    opacity: 0.5;
+    margin: 2px 0;
+    height: 1px;
+    border: none;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+    max-width: var(--max-width-xl);
+    margin: var(--space-12) auto;
+    margin-bottom: var(--space-20);
+    padding: 0 var(--space-4);
+}
+
+.prod-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-6);
+    border: 3px solid var(--accent);
+    border-radius: var(--radius-2xl);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.prod-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.prod-card > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.prod-card > .card-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    text-align: left;
+}
+
+.prod-card > .card-text > h3:first-of-type {
+    font-size: var(--text-3xl);
+    line-height: 1.1;
+}
+
+.prod-card > .card-text > h3:last-of-type {
+    font-size: 1.75rem;
+    color: var(--secondary);
+    margin-bottom: var(--space-4);
+}
+
+.lason-btn {
+    background-color: var(--secondary);
+    color: var(--white);
+    width: 100%;
+    padding: var(--space-3);
+    margin-top: auto;
+    font-size: var(--text-lg);
+    border: none;
+    border-radius: var(--radius-2xl);
+    transition: all var(--transition-base);
+}
+
+.lason-btn:hover {
+    background-color: var(--secondary-dark);
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .main-heading {
+        margin-bottom: -3rem;
+    }
+
+    .product-grid {
+        gap: var(--space-6);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        margin-bottom: var(--space-16);
+    }
+
+    .bq-container-heading {
+        padding: 0 var(--space-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-heading {
+        margin-bottom: -1rem;
+    }
+
+    .main-heading h1 {
+        font-size: var(--text-6xl);
+    }
+
+    .upsell > h2 {
+        font-size: var(--text-4xl);
+    }
+
+    .upsell > h4 {
+        font-size: var(--text-xl);
+    }
+
+    .upsell-cards {
+        gap: var(--space-6);
+        padding: 0 var(--space-6);
+    }
+
+    .bq-container-heading {
+        flex-direction: column;
+        gap: var(--space-6);
+        margin-top: var(--space-12);
+    }
+
+    .empty {
+        display: none;
+    }
+
+    .bq-heading {
+        width: 100%;
+    }
+
+    .sort-dropdown-container {
+        width: 100%;
+        max-width: 400px;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        min-height: 13rem;
+        margin-bottom: 0;
+    }
+
+    .main-heading h1 {
+        font-size: var(--text-4xl);
+    }
+
+    .main-heading h4 {
+        font-size: var(--text-lg);
+        padding: 0 var(--space-4);
+    }
+
+    .upsell > h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .upsell > h4 {
+        font-size: var(--text-lg);
+    }
+
+    .upsell-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .prod-card {
+        padding: var(--space-4);
+    }
+
+    .prod-card > .card-text > h3:first-of-type {
+        font-size: var(--text-2xl);
+    }
+
+    .prod-card > .card-text > h3:last-of-type {
+        font-size: var(--text-xl);
+    }
+
+    .lason-btn {
+        padding: var(--space-2);
+        font-size: var(--text-base);
     }
 }

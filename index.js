@@ -22,8 +22,25 @@ function updateHeader() {
     }
 }
 
+function toSignUp() {
+    window.location.href = 'signup.html';
+}
+
+function toMenu() {
+    window.location.href = 'bouquets.html';
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     updateHeader();
+
+    const getStartedBtns = document.querySelectorAll('.get-started-btn');
+    if (getStartedBtns.length > 0) {
+        getStartedBtns.forEach(btn => btn.addEventListener('click', toSignUp));
+    }
+
+    const browseBtn = document.querySelector('.browse-btn');
+    if (browseBtn) browseBtn.addEventListener('click', toMenu);
 
     const logoutBtn = document.getElementById('logout');
     if (logoutBtn) {
