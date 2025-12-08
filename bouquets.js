@@ -106,7 +106,17 @@ async function initBqsPg() {
         if (!response.ok) throw new Error('Network response was not ok.');
         bqs = await response.json();
         initListeners();
-        sortBqs('alphabetical_asc');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('search');
+
+        if (query) {
+            searchBqs(query);
+            if (searchForm) searchForm.querySelector('.search-field').value = query;
+        } else {
+            sortBqs('alphabetical_asc');
+        }
+
     } catch (e) {
         console.error(e);
     }
