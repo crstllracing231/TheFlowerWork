@@ -4,6 +4,7 @@ let sortDisplay;
 let sortTextDisplay;
 let sortDropdownList;
 let sortDropdownContainer;
+let searchForm;
 
 function renderBqs(data) {
     if (!productContainer) return;
@@ -35,6 +36,20 @@ function sortBqs(sortValue) {
         default: sortedData.sort((a, b) => a.name.localeCompare(b.name)); break;
     }
     renderBqs(sortedData);
+}
+
+function searchBqs(query) {
+    const searchTerm = query.toLowerCase().trim();
+    if (!searchTerm) {
+        sortBqs(sortDisplay.dataset.currentSort || 'alphabetical_asc');
+        return;
+    }
+
+    const filteredData = bqs.filter(bq =>
+        bq.name.toLowerCase().includes(searchTerm)
+    );
+
+    renderBqs(filteredData);
 }
 
 function initListeners() {
@@ -69,6 +84,13 @@ function initListeners() {
             selectedSort.classList.add('active-sort');
         }
     });
+
+    searchForm.addEventListener('submit', (e) => {
+       e.preventDefault();
+
+       const searchInput = searchForm.querySelector('.search-field');
+       searchBqs(searchInput.value);
+    });
 }
 
 async function initBqsPg() {
@@ -77,6 +99,7 @@ async function initBqsPg() {
     sortDisplay = document.querySelector('.sort-display');
     sortTextDisplay = document.getElementById('sort-text-display');
     sortDropdownList = document.querySelector('.sort-dropdown-list');
+    searchForm = document.querySelector('.search-bar');
 
     try {
         const response = await fetch('bouquets.json');
