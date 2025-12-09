@@ -17,12 +17,34 @@ function renderBqs(data) {
                 <div class="card-text">
                     <h3 class="f-bold">${bq.name}</h3>
                     <h3 class="f-bold">₱ ${bq.price.toLocaleString('en-US')}</h3>
-                    <button class="lason-btn f-quicksand f-bold">Add to Cart</button>
+                    <button class="lason-btn f-quicksand f-bold" data-id="${bq.id}">Add to Cart</button>
                 </div>
             </div>
         `;
         productContainer.innerHTML += cardHTML;
     });
+
+    document.querySelectorAll('.lason-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const id= parseInt(e.target.dataset.id);
+            const product = bqs.find(item => item.id === id);
+            addToCart(product);
+        });
+    });
+}
+
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('flowerCart')) || [];
+    const existsInCart = cart.find(item => item.id === product.id);
+
+    if (existsInCart) {
+        existsInCart.quantity += 1;
+    } else {
+        cart.push({...product, quantity: 1});
+    }
+
+    localStorage.setItem('flowerCart', JSON.stringify(cart));
+    alert(`${product.name} has been added to your cart!`);
 }
 
 function sortBqs(sortValue) {
