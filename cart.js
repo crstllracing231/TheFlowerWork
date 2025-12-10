@@ -162,5 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     loadCart();
+
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    checkoutBtn.addEventListener('click', () => {
+        if (cartContainer.querySelectorAll('.selected').length === 0) return alert('Please select at least one item to checkout.');
+        alert('Thank you for your purchase! Your order will be shipped within the day of payment confirmation.');
+    });
 });
 
